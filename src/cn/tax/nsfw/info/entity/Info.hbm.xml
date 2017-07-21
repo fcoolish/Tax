@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cn.tax.nsfw.info.entity.Info" table="info">
+        <id name="infoId" type="java.lang.String">
+            <column name="info_id" length="32"/>
+            <generator class="uuid.hex" />
+        </id>
+        <property name="type" type="java.lang.String">
+            <column name="type" length="10" />
+        </property>
+        <property name="source" type="java.lang.String">
+            <column name="source" length="50" />
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="title" length="100" not-null="true" />
+        </property>
+        <property name="content" type="text">
+            <column name="content" />
+        </property>
+        <property name="memo" type="java.lang.String">
+            <column name="memo" length="200" />
+        </property>
+        <property name="creator" type="java.lang.String">
+            <column name="creator" length="10" />
+        </property>
+        <property name="createTime" type="java.sql.Timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

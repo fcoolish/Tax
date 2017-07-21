@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 禁用动态方法访问 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 配置成开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 配置拓展名为action -->
+	<constant name="struts.action.extention" value="action" />
+	<!-- 把主题配置成simple -->
+	<constant name="struts.ui.theme" value="simple" />
+	
+	<!-- 配置全局结果及异常映射 -->
+	<package name="base-default" extends="struts-default">
+		<!-- 返回结果类型 -->
+		<result-types>
+			<result-type name="error" class="cn.tax.core.action.SysResultAction"></result-type>
+		</result-types>
+		<!-- 全局返回结果 -->
+		<global-results>
+			<result name="error" type="error">/WEB-INF/jsp/error.jsp</result>
+			<result name="sysError">/WEB-INF/jsp/error.jsp</result>
+			<result name="input">/WEB-INF/jsp/error.jsp</result>
+		</global-results>
+		<!-- 全局异常映射 -->
+		<global-exception-mappings>
+			<exception-mapping result="sysError" exception="cn.tax.core.exception.SysException"></exception-mapping>
+			<exception-mapping result="input" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+	
+	<!-- 包含test的struts配置文件 -->
+	<include file="cn/tax/test/conf/test-struts.xml"></include>
+	<!-- 包含用户管理的struts配置文件 -->
+	<include file="cn/tax/nsfw/user/conf/user-struts.xml"></include>
+	<!-- 包含角色管理的struts配置文件 -->
+	<include file="cn/tax/nsfw/role/conf/role-struts.xml"></include>
+	<!-- 包含系统首页的struts配置文件 -->
+	<include file="cn/tax/home/conf/home-struts.xml"></include>
+	<!-- 包含纳税服务系统的struts配置文件 -->
+	<include file="cn/tax/nsfw/home/conf/home-struts.xml"></include>
+	<!-- 包含登录页面的struts配置文件 -->
+	<include file="cn/tax/login/conf/login-struts.xml"></include>
+	<!-- 包含信息管理的struts配置文件 -->
+	<include file="cn/tax/nsfw/info/conf/info-struts.xml"></include>
+	<!-- 包含投诉服务的struts配置文件 -->
+	<include file="cn/tax/nsfw/complain/conf/complain-struts.xml"></include>
+
+
+</struts>

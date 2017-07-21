@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+ 
+<struts>
+	<package name="sysHome-action" namespace="/sys" extends="base-default">
+		<action name="home_*" class="cn.tax.home.action.HomeAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/home/{1}.jsp</result>
+			<result name="home">/WEB-INF/jsp/home/home.jsp</result>
+		</action>
+	</package>
+	<package name="sysHomeJson-action" namespace="/sys" extends="json-default">
+		<action name="home_getUserJson2" class="cn.tax.home.action.HomeAction" method="getUserJson2">
+			<result type="json">
+				<param name="root">return_map</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

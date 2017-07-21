@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.tax.nsfw.user.entity.UserRole" table="user_role">
+		<composite-id name="id" class="cn.tax.nsfw.user.entity.UserRoleId">
+		<key-many-to-one name="role" lazy="false" class="cn.tax.nsfw.role.entity.Role">
+			<column name="role_id"></column>
+		</key-many-to-one>	
+		<key-property name="userId" type="java.lang.String">
+			<column name="user_id" length="32"></column>
+		</key-property>	
+		</composite-id>
+	</class>
+
+</hibernate-mapping>
+	
