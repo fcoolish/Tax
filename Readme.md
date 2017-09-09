@@ -1,5 +1,5 @@
 # Tax
-国税局协同办公平台-纳税服务系统
+协同办公平台-纳税服务系统
 
 开发环境：Windows7、MyEclipse+Tomcat7.0、Mysql5.7等开发工具。
 
