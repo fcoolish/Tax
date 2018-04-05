@@ -76,6 +76,6 @@
   	<br>
     <div style="text-align:center;width:100%;"><s:select id="year" list="#request.yearList" onchange="doAnnualStatistic()"></s:select></div>
     <br>
-    <div id="chartContainer" style="text-align:center;width:100%;></div>
+    <div id="chartContainer" style="text-align:center;width:100%;"></div>
   </body>
 </html>
